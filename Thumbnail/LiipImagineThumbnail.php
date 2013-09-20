@@ -6,7 +6,7 @@
  * @author     Blaise de Carné <blaise@concretis.com>
  */
 
-namespace Veilhan\Bundle\MediaBundle\Thumbnail;
+namespace Concretis\SonataMediaExtraBundle\Thumbnail;
 
 use Sonata\MediaBundle\Model\MediaInterface;
 use Sonata\MediaBundle\Provider\MediaProviderInterface;

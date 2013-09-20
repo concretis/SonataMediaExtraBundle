@@ -6,8 +6,6 @@ namespace Concretis\SonataMediaExtraBundle\Provider;
 
 use Gaufrette\Filesystem;
 use Imagine\Image\ImagineInterface;
-use Smalot\PdfParser\Document;
-use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\MediaBundle\CDN\CDNInterface;
 use Sonata\MediaBundle\Generator\GeneratorInterface;
 use Sonata\MediaBundle\Metadata\MetadataBuilderInterface;
@@ -58,5 +56,28 @@ class PdfProvider extends FileProvider
     public function generatePrivateUrl(MediaInterface $media, $format)
     {
         return $this->thumbnail->generatePrivateUrl($this, $media, $format);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getHelperProperties(MediaInterface $media, $format, $options = array())
+    {
+        $settings = $this->getFormat($format);
+
+        if (isset($options['width']))
+            $settings['width'] = $options['width'];
+
+        if (isset($options['height']))
+            $settings['height'] = $options['height'];
+
+        $src = $this->getCdnPath($this->getReferenceImage($media), true);
+        return array_merge(array(
+            'alt'      => $media->getName(),
+            'title'    => $media->getName(),
+            'src'      => $src,
+            'width'    => $settings['width'],
+            'height'   => $settings['height']
+        ), $options);
     }
 }

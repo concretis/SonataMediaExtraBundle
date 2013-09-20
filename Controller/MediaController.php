@@ -38,8 +38,6 @@ class MediaController extends BaseMediaController {
         $tmpFile = sprintf('%s.%s', tempnam(sys_get_temp_dir(), 'sonata_media_liip_imagine'), $media->getExtension());
         file_put_contents($tmpFile, $file->getContent());
 
-        var_dump($provider->getName());
-        die;
         if($provider->getName() == 'sonata.media.provider.pdf') {
             // specific code for pdf preview
             $im = new \Imagick();

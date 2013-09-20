@@ -29,7 +29,7 @@ class Configuration implements ConfigurationInterface
                         ->arrayNode('pdf')
                             ->addDefaultsIfNotSet()
                             ->children()
-                                ->scalarNode('service')->defaultValue('veilhan.media.provider.pdf')->end()
+                                ->scalarNode('service')->defaultValue('sonata.media.provider.pdf')->end()
                                 ->scalarNode('resizer')->defaultValue('sonata.media.resizer.simple')->end()
                                 ->scalarNode('filesystem')->defaultValue('sonata.media.filesystem.local')->end()
                                 ->scalarNode('cdn')->defaultValue('sonata.media.cdn.server')->end()

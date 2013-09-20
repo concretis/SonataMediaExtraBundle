@@ -6,6 +6,7 @@
 
     <parameters>
         <parameter key="sonata.media.provider.pdf.class">Concretis\SonataMediaExtraBundle\Provider\PdfProvider</parameter>
+        <parameter key="sonata.media.extra.thumbnail.liip_imagine.class">Concretis\SonataMediaExtraBundle\Thumbnail\LiipImagineThumbnail</parameter>
     </parameters>
 
     <services>
@@ -28,7 +29,9 @@
             </call>
         </service>
 
+        <service id="sonata.media.extra.thumbnail.liip_imagine" class="%sonata.media.extra.thumbnail.liip_imagine.class%">
+            <argument type="service" id="router" />
+        </service>
+
     </services>
 </container>
-
-
