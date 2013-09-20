@@ -71,6 +71,7 @@ class PdfProvider extends FileProvider
             $settings['height'] = $options['height'];
 
         $src = $this->getCdnPath($this->getReferenceImage($media), true);
+
         return array_merge(array(
             'alt'      => $media->getName(),
             'title'    => $media->getName(),

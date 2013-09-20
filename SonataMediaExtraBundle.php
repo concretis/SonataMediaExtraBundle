@@ -4,6 +4,7 @@
  */
 namespace Concretis\SonataMediaExtraBundle;
 
+use Concretis\SonataMediaExtraBundle\DependencyInjection\Compiler\ReplaceCDNServerServiceClass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -14,6 +15,6 @@ class SonataMediaExtraBundle extends Bundle
      */
     public function build(ContainerBuilder $container)
     {
-
+        $container->addCompilerPass(new ReplaceCDNServerServiceClass());
     }
 }
