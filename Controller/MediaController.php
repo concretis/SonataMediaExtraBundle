@@ -41,8 +41,9 @@ class MediaController extends BaseMediaController {
         if($provider->getName() == 'sonata.media.provider.pdf') {
             // specific code for pdf preview
             $im = new \Imagick();
-            $im->setResolution(72, 72);
-            $im->readImage($tmpFile);
+            $im->setResolution(200, 200);
+            $im->readImage($tmpFile.'[0]');
+            $im->setCompressionQuality(90);
             $image  = new \Imagine\Imagick\Image($im);
         } else {
             $image = $this->get('liip_imagine')->open($tmpFile);
