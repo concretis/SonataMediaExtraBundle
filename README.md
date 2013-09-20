@@ -3,6 +3,8 @@ SonataMediaExtraBundle
 
 Basic PDF provider for [SonataMediaBundle](https://github.com/sonata-project/SonataMediaBundle).
 
+***This bundle require the [PHP IMAGIK](http://php.net/manual/fr/book.imagick.php)*** extension !
+
 # Installation
 
 Register the bundle into your AppKernel:
