@@ -1,0 +1,32 @@
+{
+    "name": "concretis/sonata-media-extra-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony SonataMediaExtraBundle",
+    "keywords": ["media", "sonata", "pdf", "file", "upload"],
+    "homepage": "https://github.com/sonata-project/SonataMediaBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Blaise de Carné",
+            "email": "bdecarne@gmail.com",
+            "homepage": "http://www.concretis.com"
+        },
+        {
+            "name": "Sonata Community",
+            "homepage": "https://github.com/sonata-project/SonataMediaBundle/contributors"
+        }
+    ],
+    "require": {
+        "sonata-project/media-bundle": "2.2.*@dev"
+    },
+    "require-dev": {
+	
+    },
+    "suggest": {
+        "liip/imagine-bundle": "0.9.*",
+    },
+    "autoload": {
+        "psr-0": { "Concretis\\SonataMediaExtraBundle": "" }
+    },
+    "target-dir": "Concretis/SonataMediaExtraBundle"
+}
