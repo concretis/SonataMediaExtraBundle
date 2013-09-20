@@ -1,18 +1,29 @@
 SonataMediaExtraBundle
 ======================
 
-Basic PDF provider for SonataMediaExtraBundle.
-
+Basic PDF provider for [SonataMediaBundle](https://github.com/sonata-project/SonataMediaBundle).
 
 # Installation
 
-Just install the bundle like any other.
+Register the bundle into your AppKernel:
+
+```php
+// app/AppKernel.php
+public function registerBundles()
+{
+    return array(
+        // ...
+        new Concretis\SonataMediaExtraBundle\SonataMediaExtraBundle(),
+        // ...
+    );
+}
+```
 
 # Configuration
 
 To enable the PDF provider : 
 
-```lang
+```yml
 sonata_media:
     default_context: default
     db_driver: doctrine_orm
@@ -32,7 +43,7 @@ sonata_media_extra:
 
 To use the LiipImagineThumbnail
 
-```lang
+```yml
 sonata_media_extra:
     providers:
         pdf:
