@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class SonataExtraMediaExtension extends Extension
+class SonataMediaExtraExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -35,7 +35,7 @@ class SonataExtraMediaExtension extends Extension
      */
     public function configurePdfProvider(ContainerBuilder $container, $config)
     {
-        $definition = $container->getDefinition('veilhan.media.provider.pdf');
+        $definition = $container->getDefinition('sonata.media.provider.pdf');
         $config = $config['providers']['pdf'];
 
         $definition

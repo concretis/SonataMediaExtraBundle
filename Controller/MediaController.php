@@ -30,7 +30,7 @@ class MediaController extends BaseMediaController {
         if (!$media) {
             throw new NotFoundHttpException();
         }
-die("test");
+
         $provider = $this->getProvider($media);
         $file     = $provider->getReferenceFile($media);
 
@@ -38,7 +38,17 @@ die("test");
         $tmpFile = sprintf('%s.%s', tempnam(sys_get_temp_dir(), 'sonata_media_liip_imagine'), $media->getExtension());
         file_put_contents($tmpFile, $file->getContent());
 
-        $image = $this->get('liip_imagine')->open($tmpFile);
+        var_dump($provider->getName());
+        die;
+        if($provider->getName() == 'sonata.media.provider.pdf') {
+            // specific code for pdf preview
+            $im = new \Imagick();
+            $im->setResolution(72, 72);
+            $im->readImage($tmpFile);
+            $image  = new \Imagine\Imagick\Image($im);
+        } else {
+            $image = $this->get('liip_imagine')->open($tmpFile);
+        }
 
         $response = $this->get('liip_imagine.filter.manager')->get($this->get('request'), $filter, $image, $path);
 
