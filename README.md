@@ -23,7 +23,7 @@ public function registerBundles()
 
 # Configuration
 
-To enable the PDF provider : 
+To enable the PDF provider :
 
 ```yml
 sonata_media:
@@ -39,7 +39,7 @@ sonata_media:
                 - sonata.media.provider.pdf
 sonata_media_extra:
     providers:
-        pdf:               
+        pdf:
             resizer: sonata.media.resizer.square
 ```
 
@@ -51,7 +51,7 @@ sonata_media_extra:
         pdf:
             resizer: sonata.media.resizer.square
             thumbnail: sonata.media.thumbnail.liip_imagine
-            
+
 liip_imagine:
     filter_sets:
         default_square:
@@ -59,9 +59,4 @@ liip_imagine:
             controller_action: 'SonataMediaExtraBundle:Media:liipImagineFilter'
             filters:
                 thumbnail: { size: [130, 130], mode: outbound }
-                
-services:
-    sonata.media.cdn.server:
-        class: Concretis\SonataMediaExtraBundle\CDN\Server
-        arguments: [~]
 ```
