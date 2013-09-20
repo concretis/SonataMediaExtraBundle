@@ -7,7 +7,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Blaise de Carné",
+            "name": "Blaise de CarnÃ©",
             "email": "bdecarne@gmail.com",
             "homepage": "http://www.concretis.com"
         },
@@ -23,7 +23,7 @@
 	
     },
     "suggest": {
-        "liip/imagine-bundle": "0.9.*",
+        "liip/imagine-bundle": "0.9.*"
     },
     "autoload": {
         "psr-0": { "Concretis\\SonataMediaExtraBundle": "" }
