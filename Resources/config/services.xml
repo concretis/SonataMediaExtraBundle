@@ -3,14 +3,8 @@
 <container xmlns="http://symfony.com/schema/dic/services"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
-
-    <parameters>
-        <parameter key="sonata.media.provider.pdf.class">Concretis\SonataMediaExtraBundle\Provider\PdfProvider</parameter>
-        <parameter key="sonata.media.extra.thumbnail.liip_imagine.class">Concretis\SonataMediaExtraBundle\Thumbnail\LiipImagineThumbnail</parameter>
-    </parameters>
-
     <services>
-        <service id="sonata.media.provider.pdf" class="%sonata.media.provider.pdf.class%">
+        <service id="sonata.media.provider.pdf" class="Concretis\SonataMediaExtraBundle\Provider\PdfProvider">
             <tag name="sonata.media.provider" />
             <argument>sonata.media.provider.pdf</argument>
             <argument />
@@ -28,10 +22,5 @@
                 </argument>
             </call>
         </service>
-
-        <service id="sonata.media.extra.thumbnail.liip_imagine" class="%sonata.media.extra.thumbnail.liip_imagine.class%">
-            <argument type="service" id="router" />
-        </service>
-
     </services>
 </container>
